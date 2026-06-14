@@ -11,22 +11,22 @@ als Simulation (Aufgabe 3) und um Konsistenzmechanismen erweitert (Aufgabe 4).
 ### Aufgabe 1 & 2 – Python (UDP)
 | Datei | Beschreibung |
 |-------|--------------|
-| `firework.py` | Ein Ring-Prozess (localhost). Token-Ring per UDP-Unicast, Raketen per Multicast, ACK/Retransmit für zuverlässige Token-Übergabe. |
-| `messwerte.py` | Automatisiert die Messreihe über wachsende `n` und schreibt `results.csv`. |
-| `plots.py` | Erzeugt die Diagramme aus der `results.csv`. |
-| `firework_dist.py` | Verteilte Variante (Aufgabe 2): Topologie aus `ring.json`, Broadcast wählbar (Multicast oder n−1 Unicasts). |
-| `make_ring.py` | Erzeugt die `ring.json` aus den IP-Adressen der Teilnehmer. |
-| `auswerten.py` | Aggregiert die Statistik-Dateien der beteiligten Rechner. |
+| `firework.py` | Ein Ring-Prozess (localhost). Token-Ring per UDP-Unicast, Raketen per Multicast, ACK/Retransmit für zuverlässige Token-Übergabe |
+| `messwerte.py` | Automatisiert die Messreihe über wachsende `n` und schreibt `results.csv` |
+| `plots.py` | Erzeugt die Diagramme aus der `results.csv` |
+| `firework_dist.py` | Verteilte Variante (Aufgabe 2): Topologie aus `ring.json`, Broadcast wählbar (Multicast oder n−1 Unicasts) |
+| `make_ring.py` | Erzeugt die `ring.json` aus den IP-Adressen der Teilnehmer |
+| `auswerten.py` | Aggregiert die Statistik-Dateien der beteiligten Rechner |
 
 ### Aufgabe 3 & 4 – Java (sim4da, Gradle-Projekt)
 | Datei | Beschreibung |
 |-------|--------------|
-| `src/fireworks/FireworksSimulation.java` | Simulation des Rings; ein JVM-Lauf je `n`. |
-| `messreihe.ps1` | Startet die Messreihe über wachsende `n` und sammelt `results_sim.csv`. |
-| `src/fireworks/FireworksConsistency.java` | Konsistenz-Erweiterung mit Lamport-Uhren (K3) und Token-Sequenznummer (K1); Stör-Modi Verlust und Umordnung. |
+| `src/fireworks/FireworksSimulation.java` | Simulation des Rings; ein JVM-Lauf je `n` |
+| `messreihe.ps1` | Startet die Messreihe über wachsende `n` und sammelt `results_sim.csv` |
+| `src/fireworks/FireworksConsistency.java` | Konsistenz-Erweiterung mit Lamport-Uhren (K3) und Token-Sequenznummer (K1); Stör-Modi Verlust und Umordnung.|
 
 ### Bericht
-`Bericht_VS_Uebung1.docx` – Ergebnisbericht.
+`Bericht_Übungsblatt_1.pdf` – Ergebnisbericht.
 
 ## Ausführung
 
@@ -45,8 +45,8 @@ python firework_dist.py --config ring.json --id 0 --bcast unicast
 python auswerten.py stats           # Statistik der gesammelten node_*.json
 ```
 Hinweis: Eingehender UDP-Port (Standard 50000) muss in der Firewall freigegeben
-sein. WLAN-Router mit Client-Isolation verhindern die Kommunikation – ggf. ein
-isolationsfreies Netz (Hotspot) verwenden.
+sein. WLAN-Router mit Client-Isolation verhindern die Kommunikation (ggf. ein
+isolationsfreies Netz (Hotspot) verwenden).
 
 ### Aufgabe 3 (Simulation, Gradle)
 Benötigt JDK 25 (der Gradle-Wrapper lädt das Toolchain-JDK bei Bedarf).
