@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Uni\Uni Trier\Master\s26\verteilte systeme\u1\2026S-DS\Übungsblatt 1\Aufgabe 1\firework.py", line 53, in <module>
+    tok.bind((LO, BASE + A.id))
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 10013] Der Zugriff auf einen Socket war aufgrund der Zugriffsrechte des Sockets unzulässig
